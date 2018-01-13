@@ -1,0 +1,24 @@
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss,SSS} [%level] [%logger] - %msg %n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- Standard log level is set here -->
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+	<logger name="org.springframework" level="debug" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+	<!-- custom log levels -->
+	<logger name="org.springframework.web.servlet.mvc" level="INFO" />
+	<logger name="org.springframework.web.context.support" level="WARN" />
+	<logger name="org.springframework.beans" level="WARN" />
+	<logger name="org.springframework" level="WARN" />
+	
+</configuration>
